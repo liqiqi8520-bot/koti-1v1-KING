@@ -213,6 +213,27 @@ h3 {
   margin: 1.5rem 0;
 }
 
+.proof-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0.2rem 0 1.3rem;
+}
+
+.proof-pills span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0.42rem 0.62rem;
+  color: var(--gold);
+  border: 1px solid rgba(247, 201, 72, 0.42);
+  border-radius: 999px;
+  background: rgba(18, 9, 31, 0.72);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
 .impact-strip {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -707,7 +728,7 @@ footer {
 
 .authority {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
   gap: clamp(1.5rem, 4vw, 4rem);
   align-items: center;
   background:
@@ -726,7 +747,7 @@ footer {
 }
 
 .authority-card {
-  min-height: 230px;
+  min-height: 210px;
   padding: 1.1rem;
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-top: 6px solid var(--gold);
@@ -739,6 +760,18 @@ footer {
 }
 
 .authority-card:nth-child(3) {
+  border-top-color: var(--cyan);
+}
+
+.authority-card:nth-child(4) {
+  border-top-color: var(--gold);
+}
+
+.authority-card:nth-child(5) {
+  border-top-color: var(--orange);
+}
+
+.authority-card:nth-child(6) {
   border-top-color: var(--cyan);
 }
 
@@ -761,6 +794,40 @@ footer {
 
 .authority-card p,
 .media-card p {
+  color: var(--muted);
+}
+
+.network-flow {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.network-flow article {
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(247, 201, 72, 0.1), rgba(85, 37, 131, 0.22)),
+    rgba(18, 9, 31, 0.78);
+}
+
+.network-flow span {
+  color: var(--gold);
+  font-weight: 1000;
+}
+
+.network-flow strong {
+  display: block;
+  margin: 0.45rem 0;
+  color: var(--white);
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+
+.network-flow p {
+  margin: 0;
   color: var(--muted);
 }
 
@@ -1145,6 +1212,7 @@ footer {
   .hub-grid,
   .authority,
   .authority-grid,
+  .network-flow,
   .media-grid,
   .social-grid,
   .partner-grid,
@@ -1168,6 +1236,15 @@ footer {
   .hero-actions {
     display: grid;
     grid-template-columns: 1fr;
+  }
+
+  .proof-pills {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .proof-pills span {
+    justify-content: center;
   }
 
   .button {

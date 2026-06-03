@@ -54,9 +54,12 @@ const portalCards = [
 ];
 
 const authorityCards = [
-  { label: "Tournament Ambassador", title: "Coach C", body: "Million-reach basketball creator across FB/TikTok, positioned as a KOTI ambassador and content amplifier." },
+  { label: "Tournament Ambassador", title: "Coach C", body: "Million-reach basketball creator across FB/TikTok, positioned as the public voice and trust signal for the tour." },
+  { label: "Creator Distribution", title: "FB + Tik", body: "Short clips, game recaps, city callouts, player reels, and creator posts can make each stop travel beyond the court." },
+  { label: "Public Support", title: "40+ GOV", body: "Cooperation with 40+ government units strengthens local access, venue confidence, and community legitimacy." },
   { label: "Exposure Signal", title: "12.9M+", body: "Verified cross-platform season exposure, with public reporting stating National Finals alone passed 10M total views." },
-  { label: "Public Support", title: "40+ GOV", body: "Cooperation with 40+ government units gives the tour stronger local access, trust, and on-ground activation potential." }
+  { label: "Grassroots System", title: "178+", body: "S1 128 barangays plus S2 50 barangays and counting show real local coverage, not only event-day output." },
+  { label: "Player Base", title: "10K+", body: "A large grassroots player pool gives sponsors stories, faces, rivalries, and repeatable city content." }
 ];
 
 const mediaCards = [
@@ -64,6 +67,15 @@ const mediaCards = [
   { label: "Activation Proof", title: "Mall Arena", body: "Sponsor-friendly court energy for high-foot-traffic venue pitches.", image: "assets/mall-activation-koti.png" },
   { label: "Finals Proof", title: "National Stage", body: "Season 1 finals image shows the property can scale beyond local courts.", image: "assets/season1-national-finals-main-kv.jpg" },
   { label: "Culture Placeholder", title: "FB Photo Slot", body: "Replace with real crowd, Coach C, player reel, or government activation photo.", image: "assets/tropa-takeover-logo.png" }
+];
+
+const partnerPackages = [
+  { title: "Title Partner", body: "Own the season route, hero branding, recurring content, and the national KOTI narrative." },
+  { title: "Coach C Creator Package", body: "Build sponsored posts, tournament shoutouts, player stories, and creator-led highlight content around the ambassador layer." },
+  { title: "City Stop Partner", body: "Enter specific cities through local government cooperation, barangay activation, courtside presence, and community storytelling." },
+  { title: "Media & Replay Partner", body: "Attach the brand to recaps, short-form reels, live cuts, city challenge clips, and player-of-the-stop content." },
+  { title: "Venue Partner", body: "Convert mall or venue foot traffic into dwell time, crowd energy, sponsor sampling, and shareable event moments." },
+  { title: "University Cup Partner", body: "Own the next development lane: campus kings, youth recruitment, student crews, and school rivalry content." }
 ];
 
 const escapeHtml = (value) =>
@@ -147,6 +159,17 @@ function renderMediaWall() {
   `).join("");
 }
 
+function renderPartnerPackages() {
+  const grid = document.querySelector("#partner-grid");
+  if (!grid) return;
+  grid.innerHTML = partnerPackages.map((item) => `
+    <article>
+      <h3>${escapeHtml(item.title)}</h3>
+      <p>${escapeHtml(item.body)}</p>
+    </article>
+  `).join("");
+}
+
 function updateNextStop() {
   const datedStops = tourStops.filter((stop) => stop.start && stop.tag !== "complete");
   const now = new Date();
@@ -191,4 +214,5 @@ renderCultureWall();
 renderPortalHub();
 renderAuthorityCards();
 renderMediaWall();
+renderPartnerPackages();
 updateNextStop();
