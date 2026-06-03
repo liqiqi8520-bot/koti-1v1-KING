@@ -46,6 +46,26 @@ const cultureStories = [
   { label: "Future Lane", title: "Campus Kings", body: "A university championship line can open the next recruitment and youth culture layer." }
 ];
 
+const portalCards = [
+  { number: "01", title: "Next Stop", body: "Fast access to the upcoming city, registration status, and event hook.", href: "#next-stop" },
+  { number: "02", title: "Barangay Reach", body: "S1 128 barangays plus S2 50 barangays and counting across the tour pipeline.", href: "#coverage" },
+  { number: "03", title: "Media Wall", body: "FB/TikTok photos, creator posts, game-day recaps, and player reels.", href: "#media" },
+  { number: "04", title: "Partner Lane", body: "Sponsor, venue, city, creator, and government cooperation opportunities.", href: "#partners" }
+];
+
+const authorityCards = [
+  { label: "Tournament Ambassador", title: "Coach C", body: "Million-reach basketball creator across FB/TikTok, positioned as a KOTI ambassador and content amplifier." },
+  { label: "Exposure Signal", title: "12.9M+", body: "Verified cross-platform season exposure, with public reporting stating National Finals alone passed 10M total views." },
+  { label: "Public Support", title: "40+ GOV", body: "Cooperation with 40+ government units gives the tour stronger local access, trust, and on-ground activation potential." }
+];
+
+const mediaCards = [
+  { label: "Hero Visual", title: "Season 2 Identity", body: "Use the official Tropa Takeover visual as the campaign anchor.", image: "assets/koti-season2-kv-16x9.jpg" },
+  { label: "Activation Proof", title: "Mall Arena", body: "Sponsor-friendly court energy for high-foot-traffic venue pitches.", image: "assets/mall-activation-koti.png" },
+  { label: "Finals Proof", title: "National Stage", body: "Season 1 finals image shows the property can scale beyond local courts.", image: "assets/season1-national-finals-main-kv.jpg" },
+  { label: "Culture Placeholder", title: "FB Photo Slot", body: "Replace with real crowd, Coach C, player reel, or government activation photo.", image: "assets/tropa-takeover-logo.png" }
+];
+
 const escapeHtml = (value) =>
   String(value).replace(/[&<>"']/g, (char) => ({
     "&": "&amp;",
@@ -84,6 +104,45 @@ function renderCultureWall() {
       <span>${escapeHtml(story.label)}</span>
       <strong>${escapeHtml(story.title)}</strong>
       <p>${escapeHtml(story.body)}</p>
+    </article>
+  `).join("");
+}
+
+function renderPortalHub() {
+  const grid = document.querySelector("#portal-hub-grid");
+  if (!grid) return;
+  grid.innerHTML = portalCards.map((card) => `
+    <a href="${escapeHtml(card.href)}" class="hub-card">
+      <span>${escapeHtml(card.number)}</span>
+      <strong>${escapeHtml(card.title)}</strong>
+      <p>${escapeHtml(card.body)}</p>
+    </a>
+  `).join("");
+}
+
+function renderAuthorityCards() {
+  const grid = document.querySelector("#authority-grid");
+  if (!grid) return;
+  grid.innerHTML = authorityCards.map((card) => `
+    <article class="authority-card">
+      <span>${escapeHtml(card.label)}</span>
+      <strong>${escapeHtml(card.title)}</strong>
+      <p>${escapeHtml(card.body)}</p>
+    </article>
+  `).join("");
+}
+
+function renderMediaWall() {
+  const grid = document.querySelector("#media-wall-grid");
+  if (!grid) return;
+  grid.innerHTML = mediaCards.map((card) => `
+    <article class="media-card">
+      <img src="${escapeHtml(card.image)}" alt="${escapeHtml(card.title)}">
+      <div>
+        <span>${escapeHtml(card.label)}</span>
+        <strong>${escapeHtml(card.title)}</strong>
+        <p>${escapeHtml(card.body)}</p>
+      </div>
     </article>
   `).join("");
 }
@@ -129,4 +188,7 @@ if (year) year.textContent = String(new Date().getFullYear());
 
 renderSchedule();
 renderCultureWall();
+renderPortalHub();
+renderAuthorityCards();
+renderMediaWall();
 updateNextStop();

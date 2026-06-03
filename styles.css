@@ -1,16 +1,18 @@
 :root {
-  --ink: #061426;
-  --court: #082f44;
-  --court-2: #0d5a73;
-  --cyan: #18e6ef;
-  --gold: #ffc536;
-  --orange: #f05a28;
+  --ink: #12091f;
+  --court: #1b1033;
+  --court-2: #4b247c;
+  --cyan: #c9a7ff;
+  --gold: #f7c948;
+  --orange: #f07a2f;
   --white: #ffffff;
-  --muted: #b8d7df;
+  --muted: #e5d8ff;
   --line: rgba(255, 255, 255, 0.16);
-  --panel: rgba(4, 20, 38, 0.78);
-  --panel-solid: #0a1a2c;
-  --red: #c31f37;
+  --panel: rgba(18, 9, 31, 0.78);
+  --panel-solid: #1b1033;
+  --red: #c0264d;
+  --purple: #552583;
+  --deep-purple: #14081f;
 }
 
 * {
@@ -25,7 +27,7 @@ body {
   margin: 0;
   background:
     linear-gradient(135deg, rgba(240, 90, 40, 0.12) 0 12%, transparent 12% 100%),
-    linear-gradient(180deg, #061426 0%, #092638 42%, #080b13 100%);
+    linear-gradient(180deg, #12091f 0%, #2f1650 42%, #08050f 100%);
   color: var(--white);
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
@@ -67,7 +69,7 @@ img {
   gap: 1rem;
   min-height: 72px;
   padding: 0.75rem clamp(1rem, 4vw, 4rem);
-  background: rgba(6, 20, 38, 0.8);
+  background: rgba(18, 9, 31, 0.86);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(14px);
 }
@@ -143,7 +145,7 @@ nav a:focus {
   inset: 0;
   background:
     linear-gradient(90deg, rgba(4, 12, 24, 0.96) 0%, rgba(6, 20, 38, 0.74) 42%, rgba(6, 20, 38, 0.2) 72%),
-    linear-gradient(0deg, rgba(6, 20, 38, 0.92), transparent 48%);
+    linear-gradient(0deg, rgba(18, 9, 31, 0.94), transparent 48%);
 }
 
 .hero-content {
@@ -646,7 +648,7 @@ footer {
 .data-arena {
   background:
     linear-gradient(90deg, rgba(240, 90, 40, 0.12), transparent 40%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(6, 20, 38, 0));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(18, 9, 31, 0));
 }
 
 .impact-cards article {
@@ -655,6 +657,111 @@ footer {
   background:
     linear-gradient(180deg, rgba(10, 26, 44, 0.96), rgba(6, 20, 38, 0.78)),
     repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0 1px, transparent 1px 9px);
+}
+
+.league-hub {
+  background:
+    linear-gradient(135deg, rgba(247, 201, 72, 0.12), rgba(85, 37, 131, 0.22)),
+    #12091f;
+}
+
+.hub-grid,
+.authority-grid,
+.media-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.hub-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.hub-card {
+  min-height: 230px;
+  padding: 1.25rem;
+  border: 1px solid rgba(247, 201, 72, 0.36);
+  border-radius: 8px;
+  background:
+    linear-gradient(160deg, rgba(85, 37, 131, 0.78), rgba(18, 9, 31, 0.92)),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 10px);
+}
+
+.hub-card span {
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 1000;
+}
+
+.hub-card strong {
+  display: block;
+  margin: 1.8rem 0 0.55rem;
+  color: var(--white);
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.hub-card p {
+  color: var(--muted);
+}
+
+.authority {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: center;
+  background:
+    linear-gradient(105deg, rgba(247, 201, 72, 0.2) 0 34%, rgba(85, 37, 131, 0.38) 34% 100%),
+    #170b26;
+}
+
+.authority-main p {
+  max-width: 680px;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+}
+
+.authority-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.authority-card {
+  min-height: 230px;
+  padding: 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-top: 6px solid var(--gold);
+  border-radius: 8px;
+  background: rgba(18, 9, 31, 0.82);
+}
+
+.authority-card:nth-child(2) {
+  border-top-color: var(--orange);
+}
+
+.authority-card:nth-child(3) {
+  border-top-color: var(--cyan);
+}
+
+.authority-card span,
+.media-card span {
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.authority-card strong {
+  display: block;
+  margin: 0.65rem 0;
+  color: var(--white);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.authority-card p,
+.media-card p {
+  color: var(--muted);
 }
 
 .impact-cards article:nth-child(2) {
@@ -673,7 +780,7 @@ footer {
 
 .coverage {
   background:
-    linear-gradient(135deg, rgba(5, 25, 42, 0.95), rgba(10, 26, 44, 0.78)),
+    linear-gradient(135deg, rgba(18, 9, 31, 0.95), rgba(85, 37, 131, 0.42)),
     linear-gradient(90deg, rgba(24, 230, 239, 0.08), rgba(255, 197, 54, 0.07));
 }
 
@@ -841,8 +948,8 @@ footer {
 
 .culture-wall {
   background:
-    linear-gradient(135deg, rgba(240, 90, 40, 0.16), rgba(6, 20, 38, 0.72) 48%, rgba(24, 230, 239, 0.1)),
-    #07192b;
+    linear-gradient(135deg, rgba(247, 201, 72, 0.16), rgba(18, 9, 31, 0.72) 48%, rgba(85, 37, 131, 0.34)),
+    #170b26;
 }
 
 .culture-grid {
@@ -858,8 +965,45 @@ footer {
   border-top: 5px solid var(--cyan);
   border-radius: 8px;
   background:
-    linear-gradient(180deg, rgba(5, 25, 42, 0.92), rgba(6, 20, 38, 0.78)),
+    linear-gradient(180deg, rgba(44, 21, 74, 0.92), rgba(18, 9, 31, 0.78)),
     repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 12px);
+}
+
+.media-wall {
+  background:
+    linear-gradient(180deg, rgba(85, 37, 131, 0.32), rgba(18, 9, 31, 0)),
+    #12091f;
+}
+
+.media-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.media-card {
+  min-height: 330px;
+  overflow: hidden;
+  border: 1px solid rgba(247, 201, 72, 0.28);
+  border-radius: 8px;
+  background: rgba(18, 9, 31, 0.82);
+}
+
+.media-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.media-card div {
+  padding: 1rem;
+}
+
+.media-card strong {
+  display: block;
+  margin: 0.5rem 0;
+  color: var(--white);
+  font-size: 1.25rem;
+  line-height: 1.05;
+  text-transform: uppercase;
 }
 
 .culture-tile:nth-child(2n) {
@@ -998,6 +1142,10 @@ footer {
   .impact-strip,
   .hero-scoreboard,
   .proof-grid,
+  .hub-grid,
+  .authority,
+  .authority-grid,
+  .media-grid,
   .social-grid,
   .partner-grid,
   .champion-grid,
