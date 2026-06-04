@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" role="img" aria-label="KOTI route map card option">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#552583"/>
+      <stop offset="1" stop-color="#08050f"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="900" height="560" rx="24" fill="url(#bg)"/>
+  <path d="M548 70c45 28 54 85 34 129-16 34-47 54-45 91 2 48 59 58 76 103 22 58-38 110-100 97-52-11-83-57-125-88-41-31-99-46-122-93-24-49 11-107 58-128 43-20 88-1 124-27 32-23 43-100 100-84z" fill="#1b0c2c" stroke="#f7c948" stroke-width="4"/>
+  <path d="M388 132c26 16 32 51 20 78-10 21-29 34-28 57 1 29 36 36 46 63 13 36-23 68-61 60-32-7-51-35-77-54-25-19-61-28-75-57-15-30 7-66 36-79 26-12 54 0 76-17 20-14 27-61 63-51z" fill="#351452" stroke="#f7c948" stroke-width="3" opacity=".85"/>
+  <g filter="url(#glow)" font-family="Arial, Helvetica, sans-serif" font-weight="800">
+    <circle cx="376" cy="182" r="11" fill="#f7c948"/><text x="393" y="187" fill="#fff" font-size="20">NCR</text>
+    <circle cx="326" cy="122" r="8" fill="#f7c948"/><text x="342" y="127" fill="#fff" font-size="16">Baguio</text>
+    <circle cx="426" cy="245" r="8" fill="#f7c948"/><text x="443" y="250" fill="#fff" font-size="16">Mindoro</text>
+    <circle cx="520" cy="350" r="10" fill="#f7c948"/><text x="538" y="356" fill="#fff" font-size="18">Bacolod</text>
+    <circle cx="578" cy="318" r="10" fill="#f7c948"/><text x="596" y="324" fill="#fff" font-size="18">Cebu</text>
+    <circle cx="610" cy="388" r="9" fill="#f7c948"/><text x="628" y="394" fill="#fff" font-size="18">Bohol</text>
+    <circle cx="685" cy="462" r="8" fill="#8e6bc8"/><text x="703" y="468" fill="#dfd2f3" font-size="16">Davao</text>
+  </g>
+  <text x="42" y="70" fill="#f7c948" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="900">OPTION A</text>
+  <text x="42" y="122" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="1000">ROUTE MAP</text>
+  <text x="42" y="165" fill="#dfd2f3" font-family="Arial, Helvetica, sans-serif" font-size="24">Best for showing national coverage fast.</text>
+  <text x="42" y="496" fill="#f7c948" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="1000">170+ COMMUNITIES</text>
+</svg>

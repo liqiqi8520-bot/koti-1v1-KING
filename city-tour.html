@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tropa Takeover Circuit | KOTI</title>
+    <meta name="description" content="KOTI 1V1 City Tour schedule, route, city qualifiers, player cards, match reports, and highlight links.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="KOTI home"><img src="assets/1v1-season2-logo.png" alt="1V1 KOTI logo"></a>
+      <nav>
+        <a href="city-tour.html" aria-current="page">Tropa Circuit</a>
+        <a href="university.html">University</a>
+        <a href="sponsors.html">Sponsors</a>
+        <a href="about.html">About</a>
+      </nav>
+      <a class="header-cta" href="sponsors.html">Partner With KOTI</a>
+    </header>
+
+    <main>
+      <section class="page-hero city-hero">
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="eyebrow gold-chip">Tropa Takeover Circuit</p>
+          <h1>Every city has a king. Every barangay has a story.</h1>
+          <p class="hero-copy">
+            KOTI brings Haring Lungsod / City Kings from local communities to the national stage through
+            1v1 qualifiers, player stories, match recaps, and highlight links.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">Route Timeline</p>
+            <h2>Completed, upcoming, and to-open cities.</h2>
+          </div>
+          <p>Use the filters to keep the page short on mobile. City cards can be updated later with winners and links.</p>
+        </div>
+        <div class="filter-row" aria-label="City tour filters">
+          <button type="button" class="filter-button active" data-city-filter="all">All</button>
+          <button type="button" class="filter-button" data-city-filter="complete">Completed</button>
+          <button type="button" class="filter-button" data-city-filter="soon">Upcoming</button>
+          <button type="button" class="filter-button" data-city-filter="open">To Open</button>
+          <button type="button" class="filter-button" data-city-filter="north">North</button>
+          <button type="button" class="filter-button" data-city-filter="south">South</button>
+          <button type="button" class="filter-button" data-city-filter="barangay">Barangay Courts</button>
+          <button type="button" class="filter-button" data-city-filter="showcase">Mall / Venue</button>
+        </div>
+        <div class="city-grid" id="city-card-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="section story-section">
+        <div class="section-heading">
+          <p class="eyebrow">Grassroots Heroes</p>
+          <h2>Short reports first. Full highlights later.</h2>
+          <p>
+            The city page should prove the tournament through named winners, match moments, and highlight links.
+            Missing links stay as placeholders until official FB/TikTok URLs are added.
+          </p>
+        </div>
+        <div class="hero-story-grid" id="hero-story-grid"></div>
+      </section>
+    </main>
+
+    <footer>
+      <span>1V1 KOTI - Tropa Takeover Circuit</span>
+      <span>(c) <span data-current-year></span> KOTI.</span>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
