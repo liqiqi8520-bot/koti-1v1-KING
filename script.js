@@ -30,34 +30,40 @@ const tourStops = [
 
 const coveragePanels = {
   north: {
-    title: "North Philippines",
-    stat: "110+ communities",
-    body: "NCR / Metro Manila is the first stronghold, with Mindoro, Baguio, and other northern regions planned as the route expands.",
-    chips: ["NCR / Metro Manila", "Mindoro", "Baguio", "Cainta", "Pangasinan", "Cavite", "Bulacan"],
+    title: "Season 1 North Base",
+    stat: "North 60",
+    body: "Season 1 built the first North-side community base before KOTI moved into the larger Season 2 city-qualifier model.",
+    chips: ["North Barangays", "Community Games", "Local Courts", "Grassroots Winners"],
     points: [
-      { label: "Baguio", x: 37, y: 15, status: "open" },
-      { label: "NCR", x: 46, y: 30, status: "active" },
-      { label: "Mindoro", x: 43, y: 43, status: "open" }
+      { label: "North 60", x: 46, y: 30, status: "active" },
+      { label: "NCR Base", x: 48, y: 32, status: "active" },
+      { label: "North Route", x: 42, y: 24, status: "open" }
     ]
   },
   south: {
-    title: "South Philippines",
-    stat: "60+ communities",
-    body: "The South lane is built around Aklan, Cebu, Bohol, and the wider Visayas basketball pathway.",
-    chips: ["Aklan", "Cebu", "Bohol", "Iloilo", "Bacolod", "Boracay", "Dumaguete"],
+    title: "Season 1 South Base",
+    stat: "South 61+",
+    body: "Season 1 also built a South-side community base. This gives KOTI a stronger national story before Season 2 expands through core-city qualifiers.",
+    chips: ["South Barangays", "Community Games", "Visayas Pathway", "Regional Base"],
     points: [
-      { label: "Aklan", x: 48, y: 53, status: "open" },
-      { label: "Bacolod", x: 46, y: 63, status: "open" },
-      { label: "Cebu", x: 57, y: 62, status: "open" },
-      { label: "Bohol", x: 61, y: 70, status: "open" }
+      { label: "South 61+", x: 55, y: 64, status: "active" },
+      { label: "Visayas", x: 54, y: 60, status: "active" },
+      { label: "South Route", x: 60, y: 70, status: "open" }
     ]
   },
   next: {
-    title: "Priority To Cover",
-    stat: "Next regions",
-    body: "Mindanao, Palawan, Davao, and additional island communities are positioned as future KOTI growth areas.",
-    chips: ["Mindanao", "Palawan", "Davao", "Zamboanga", "General Santos", "Cagayan de Oro"],
+    title: "Season 2 NCR + Future Regions",
+    stat: "NCR covered",
+    body: "Season 2 has already covered the whole NCR area. The next story is expansion into more core Philippine regions.",
+    chips: ["NCR Covered", "Mindoro", "Baguio", "Aklan", "Cebu", "Bohol", "Mindanao", "Palawan", "Davao"],
     points: [
+      { label: "NCR", x: 46, y: 30, status: "active" },
+      { label: "Mindoro", x: 43, y: 43, status: "open" },
+      { label: "Baguio", x: 37, y: 15, status: "open" },
+      { label: "Aklan", x: 48, y: 53, status: "open" },
+      { label: "Bacolod", x: 46, y: 63, status: "open" },
+      { label: "Cebu", x: 57, y: 62, status: "open" },
+      { label: "Bohol", x: 61, y: 70, status: "open" },
       { label: "Palawan", x: 30, y: 64, status: "future" },
       { label: "Mindanao", x: 64, y: 86, status: "future" },
       { label: "Davao", x: 73, y: 88, status: "future" }
@@ -89,7 +95,7 @@ const mediaCards = [
 const heroStories = [
   { title: "City King", label: "Mandaluyong", body: "Prince Almond Yambao can become a named proof point for city-pride storytelling." },
   { title: "Clutch Report", label: "Marikina", body: "Jiego Dime's clutch-story angle is strong for short match reports and reel captions." },
-  { title: "Season 1 Foundation", label: "121 Games", body: "Season 1 promoted KOTI through 121 barangay-level community games: 60 in the North and 61 in the South." }
+  { title: "Season 1 Foundation", label: "121 Games", body: "Season 1 promoted KOTI through 121 barangay-level community games, building a North 60 and South 61+ regional base." }
 ];
 
 const packages = {
