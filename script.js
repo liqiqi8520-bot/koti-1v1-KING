@@ -116,8 +116,8 @@ const packages = {
   },
   d: {
     title: "D. Custom Partnership",
-    body: "City naming rights, barangay route sponsorship, mall showcase naming, University Championship partnership, Coach C collaboration, and customized campaign design.",
-    points: ["City or barangay route naming rights", "Mall / venue showcase naming", "University Championship partnership", "Coach C or government-linked activation"]
+    body: "City naming rights, barangay route sponsorship, mall showcase naming, University Championship partnership, Coach C collaboration, public-figure promotion, and customized campaign design.",
+    points: ["City or barangay route naming rights", "Mall / venue showcase naming", "University Championship partnership", "Coach C / James Yap style public-figure activation"]
   }
 };
 

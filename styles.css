@@ -638,7 +638,9 @@ h3 {
 .sponsor-fit-grid,
 .local-playbook-grid,
 .sponsor-jump-grid,
-.sponsor-evidence-grid {
+.sponsor-evidence-grid,
+.partner-proof-grid,
+.influence-proof-grid {
   display: grid;
   gap: 1rem;
 }
@@ -651,6 +653,7 @@ h3 {
 .route-type-section,
 .sponsor-jump-section,
 .sponsor-evidence-section,
+.partner-proof-section,
 .sponsor-thesis-section,
 .activation-lanes-section,
 .season-proof-section,
@@ -709,6 +712,65 @@ h3 {
 
 .sponsor-evidence-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.partner-proof-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.influence-proof-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 1rem;
+}
+
+.brand-board,
+.influence-proof-grid article {
+  min-height: 250px;
+  padding: 1.25rem;
+  border: 1px solid rgba(247, 201, 72, 0.28);
+  border-top: 6px solid var(--gold);
+  border-radius: 8px;
+  background:
+    linear-gradient(160deg, rgba(8, 5, 15, 0.92), rgba(85, 37, 131, 0.66)),
+    rgba(8, 5, 15, 0.84);
+}
+
+.brand-board span,
+.influence-proof-grid span {
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 1000;
+  text-transform: uppercase;
+}
+
+.brand-board strong,
+.influence-proof-grid strong {
+  display: block;
+  margin: 0.8rem 0 1rem;
+  font-size: clamp(1.65rem, 3vw, 2.65rem);
+  line-height: 0.96;
+  text-transform: uppercase;
+}
+
+.influence-proof-grid p {
+  color: var(--muted);
+}
+
+.brand-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.brand-cloud i {
+  min-height: 38px;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid rgba(247, 201, 72, 0.28);
+  border-radius: 6px;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
+  font-style: normal;
+  font-weight: 900;
 }
 
 .sponsor-evidence-grid article {
@@ -1169,6 +1231,8 @@ footer {
   .local-playbook-grid,
   .sponsor-jump-grid,
   .sponsor-evidence-grid,
+  .partner-proof-grid,
+  .influence-proof-grid,
   .portal-grid,
   .portal-grid.three,
   .media-grid,
