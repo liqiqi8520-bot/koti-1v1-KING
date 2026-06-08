@@ -28,58 +28,64 @@ const tourStops = [
   { city: "Lapu-Lapu", group: "south", region: "South Pipeline", date: "To open", venue: "Venue TBC", status: "To Open", tag: "open", champion: "TBC", runnerUp: "TBC", third: "TBC", report: "Cebu metro-area expansion opportunity.", highlight: "" }
 ];
 
-const coveragePanels = {
-  north: {
-    title: "Season 1 North Base",
-    stat: "North 60",
-    body: "Season 1 built the first North-side community base before KOTI moved into the larger Season 2 city-qualifier model.",
-    chips: ["North Barangays", "Community Games", "Local Courts", "Grassroots Winners"],
-    points: [
-      { label: "North 60", x: 46, y: 30, status: "active" },
-      { label: "NCR Base", x: 48, y: 32, status: "active" },
-      { label: "North Route", x: 42, y: 24, status: "open" }
-    ]
-  },
-  south: {
-    title: "Season 1 South Base",
-    stat: "South 61+",
-    body: "Season 1 also built a South-side community base. This gives KOTI a stronger national story before Season 2 expands through core-city qualifiers.",
-    chips: ["South Barangays", "Community Games", "Visayas Pathway", "Regional Base"],
-    points: [
-      { label: "South 61+", x: 55, y: 64, status: "active" },
-      { label: "Visayas", x: 54, y: 60, status: "active" },
-      { label: "South Route", x: 60, y: 70, status: "open" }
-    ]
-  },
-  next: {
-    title: "Season 2 NCR + Future Regions",
-    stat: "NCR covered",
-    body: "Season 2 has already covered the whole NCR area. The next story is expansion into more core Philippine regions.",
-    chips: ["NCR Covered", "Mindoro", "Baguio", "Aklan", "Cebu", "Bohol", "Mindanao", "Palawan", "Davao"],
-    points: [
-      { label: "NCR", x: 46, y: 30, status: "active" },
-      { label: "Mindoro", x: 43, y: 43, status: "open" },
-      { label: "Baguio", x: 37, y: 15, status: "open" },
-      { label: "Aklan", x: 48, y: 53, status: "open" },
-      { label: "Bacolod", x: 46, y: 63, status: "open" },
-      { label: "Cebu", x: 57, y: 62, status: "open" },
-      { label: "Bohol", x: 61, y: 70, status: "open" },
-      { label: "Palawan", x: 30, y: 64, status: "future" },
-      { label: "Mindanao", x: 64, y: 86, status: "future" },
-      { label: "Davao", x: 73, y: 88, status: "future" }
-    ]
-  },
-  university: {
-    title: "University Championship",
-    stat: "North 8 + South 8",
-    body: "The campus lane is planned as North and South eight-university circuits, then regional finals and national finals.",
-    chips: ["North 8 Universities", "South 8 Universities", "Regional Finals", "National Finals"],
-    points: [
-      { label: "North 8", x: 46, y: 31, status: "campus" },
-      { label: "South 8", x: 56, y: 65, status: "campus" }
-    ]
-  }
+const routeBounds = {
+  minLat: 5.2,
+  maxLat: 18.8,
+  minLng: 116.4,
+  maxLng: 127.0
 };
+
+const nationalRoutePoints = [
+  { label: "Mandaluyong", lat: 14.5794, lng: 121.0359, type: "completed" },
+  { label: "Caloocan", lat: 14.7566, lng: 121.045, type: "completed" },
+  { label: "Valenzuela", lat: 14.7011, lng: 120.983, type: "completed" },
+  { label: "Manila", lat: 14.5995, lng: 120.9842, type: "completed" },
+  { label: "Taguig", lat: 14.5176, lng: 121.0509, type: "completed" },
+  { label: "Pateros", lat: 14.5445, lng: 121.0671, type: "completed" },
+  { label: "Marikina", lat: 14.6507, lng: 121.1029, type: "completed" },
+  { label: "Las Pinas", lat: 14.4445, lng: 120.9939, type: "completed" },
+  { label: "Quezon City", lat: 14.676, lng: 121.0437, type: "completed" },
+  { label: "Pasay", lat: 14.5378, lng: 121.0014, type: "completed" },
+  { label: "San Juan", lat: 14.6042, lng: 121.0309, type: "completed" },
+  { label: "Pasig", lat: 14.5764, lng: 121.0851, type: "completed" },
+  { label: "NCR Covered", lat: 14.6091, lng: 121.0223, type: "hub", featured: true },
+  { label: "North 60", lat: 15.08, lng: 120.82, type: "s1", featured: true },
+  { label: "South 61+", lat: 10.72, lng: 122.56, type: "s1", featured: true },
+  { label: "Baguio", lat: 16.4023, lng: 120.596, type: "pipeline", featured: true },
+  { label: "Pangasinan", lat: 16.0433, lng: 120.3333, type: "pipeline" },
+  { label: "Pampanga", lat: 15.033, lng: 120.684, type: "pipeline" },
+  { label: "Bulacan", lat: 14.8527, lng: 120.816, type: "pipeline" },
+  { label: "Cavite", lat: 14.2456, lng: 120.8786, type: "pipeline" },
+  { label: "Mindoro", lat: 13.4115, lng: 121.1803, type: "pipeline", featured: true },
+  { label: "Aklan", lat: 11.706, lng: 122.364, type: "pipeline", featured: true },
+  { label: "Boracay", lat: 11.9674, lng: 121.9248, type: "pipeline" },
+  { label: "Iloilo", lat: 10.7202, lng: 122.5621, type: "pipeline" },
+  { label: "Bacolod", lat: 10.6765, lng: 122.9511, type: "pipeline", featured: true },
+  { label: "Dumaguete", lat: 9.3068, lng: 123.3054, type: "pipeline" },
+  { label: "Cebu", lat: 10.3157, lng: 123.8854, type: "pipeline", featured: true },
+  { label: "Mandaue", lat: 10.3403, lng: 123.9416, type: "pipeline" },
+  { label: "Lapu-Lapu", lat: 10.3103, lng: 123.9494, type: "pipeline" },
+  { label: "Talisay", lat: 10.2447, lng: 123.8494, type: "pipeline" },
+  { label: "Toledo", lat: 10.3773, lng: 123.6386, type: "pipeline" },
+  { label: "Bogo", lat: 11.0517, lng: 124.0055, type: "pipeline" },
+  { label: "Bohol", lat: 9.65, lng: 123.85, type: "pipeline", featured: true },
+  { label: "Tacloban", lat: 11.2449, lng: 125.003, type: "pipeline" },
+  { label: "Palawan", lat: 9.9672, lng: 118.7855, type: "future", featured: true },
+  { label: "Cagayan de Oro", lat: 8.4542, lng: 124.6319, type: "future" },
+  { label: "Zamboanga", lat: 6.9214, lng: 122.079, type: "future" },
+  { label: "General Santos", lat: 6.1164, lng: 125.1716, type: "future" },
+  { label: "Davao", lat: 7.1907, lng: 125.4553, type: "future", featured: true },
+  { label: "North 8 Universities", lat: 14.6042, lng: 121.0309, type: "campus", featured: true },
+  { label: "South 8 Universities", lat: 10.3157, lng: 123.8854, type: "campus", featured: true }
+];
+
+const routeLineGroups = [
+  { type: "completed", labels: ["NCR Covered", "Baguio", "Pangasinan", "Pampanga", "NCR Covered", "Mindoro"] },
+  { type: "pipeline", labels: ["NCR Covered", "Aklan", "Bacolod", "Iloilo", "Cebu", "Bohol", "Tacloban"] },
+  { type: "future", labels: ["Cebu", "Cagayan de Oro", "Davao", "General Santos", "Zamboanga"] },
+  { type: "future", labels: ["NCR Covered", "Palawan"] },
+  { type: "campus", labels: ["North 8 Universities", "South 8 Universities"] }
+];
 
 const mediaCards = [
   { label: "Live Game", title: "Broadcast-style proof", body: "Real gameplay, sponsor boards, score bug, and event operations in one frame.", image: "assets/facebook/deep-pass-01/fb-deep-01-001.jpg" },
@@ -151,28 +157,71 @@ function getRouteLaneLabel(lane) {
   return lane === "showcase" ? "Mall / Venue Showcase" : "Barangay Court Route";
 }
 
-function renderCoverage(key = "north") {
-  const target = document.querySelector("#coverage-map");
-  const panel = coveragePanels[key];
-  if (!target || !panel) return;
+function projectRoutePoint(point) {
+  const x = ((point.lng - routeBounds.minLng) / (routeBounds.maxLng - routeBounds.minLng)) * 100;
+  const y = ((routeBounds.maxLat - point.lat) / (routeBounds.maxLat - routeBounds.minLat)) * 100;
+  return {
+    ...point,
+    x: Math.max(2, Math.min(98, x)),
+    y: Math.max(2, Math.min(98, y))
+  };
+}
+
+function routePointByLabel(points, label) {
+  return points.find((point) => point.label === label);
+}
+
+function renderNationalRouteMap() {
+  const target = document.querySelector("#national-route-map");
+  if (!target) return;
+
+  const projected = nationalRoutePoints.map(projectRoutePoint);
+  const routeLines = routeLineGroups.map((group) => {
+    const coordinates = group.labels
+      .map((label) => routePointByLabel(projected, label))
+      .filter(Boolean)
+      .map((point) => `${point.x.toFixed(2)},${point.y.toFixed(2)}`)
+      .join(" ");
+
+    return `<polyline class="route-line ${escapeHtml(group.type)}" points="${coordinates}"></polyline>`;
+  }).join("");
 
   target.innerHTML = `
-    <div class="map-card">
-      <span>${escapeHtml(panel.stat)}</span>
-      <strong>${escapeHtml(panel.title)}</strong>
-      <p>${escapeHtml(panel.body)}</p>
-      <div class="philippines-point-map" aria-label="Simplified Philippines coverage point map">
-        <span class="island-shape luzon-shape"></span>
-        <span class="island-shape visayas-shape"></span>
-        <span class="island-shape mindanao-shape"></span>
-        ${panel.points.map((point) => `
-          <b class="map-point ${escapeHtml(point.status)}" style="left:${escapeHtml(point.x)}%;top:${escapeHtml(point.y)}%">
-            <i></i>${escapeHtml(point.label)}
-          </b>
-        `).join("")}
+    <div class="route-map-stage">
+      <div class="route-map-title">
+        <span>NCR Covered</span>
+        <strong>KOTI National Route</strong>
+        <p>City coordinates are plotted from real Philippine locations; the visual is branded for KOTI, not copied from Google Maps.</p>
       </div>
-      <div class="chip-cloud">
-        ${panel.chips.map((chip) => `<i>${escapeHtml(chip)}</i>`).join("")}
+      <svg class="route-map-svg" viewBox="0 0 100 100" role="img" aria-label="KOTI national route map across the Philippines">
+        <defs>
+          <filter id="routeGlow" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="1.8" result="blur"></feGaussianBlur>
+            <feMerge>
+              <feMergeNode in="blur"></feMergeNode>
+              <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+          </filter>
+        </defs>
+        <path class="route-island luzon" d="M40,11 L53,17 L56,29 L51,41 L42,48 L34,43 L29,31 L33,18 Z"></path>
+        <path class="route-island palawan" d="M17,47 L21,51 L24,60 L25,72 L23,83 L19,78 L18,66 L15,56 Z"></path>
+        <path class="route-island visayas" d="M43,53 L54,49 L67,52 L75,58 L68,68 L54,69 L45,63 Z"></path>
+        <path class="route-island mindanao" d="M64,72 L83,73 L93,82 L84,94 L66,92 L58,83 Z"></path>
+        <ellipse class="coverage-halo ncr" cx="${routePointByLabel(projected, "NCR Covered").x.toFixed(2)}" cy="${routePointByLabel(projected, "NCR Covered").y.toFixed(2)}" rx="7.5" ry="5.2"></ellipse>
+        <ellipse class="coverage-halo north" cx="${routePointByLabel(projected, "North 60").x.toFixed(2)}" cy="${routePointByLabel(projected, "North 60").y.toFixed(2)}" rx="12" ry="8"></ellipse>
+        <ellipse class="coverage-halo south" cx="${routePointByLabel(projected, "South 61+").x.toFixed(2)}" cy="${routePointByLabel(projected, "South 61+").y.toFixed(2)}" rx="13" ry="9"></ellipse>
+        ${routeLines}
+        ${projected.map((point) => `
+          <g class="route-node ${escapeHtml(point.type)} ${point.featured ? "featured" : ""}" transform="translate(${point.x.toFixed(2)} ${point.y.toFixed(2)})">
+            <circle r="${point.featured ? "1.8" : "1.05"}"></circle>
+            ${point.featured ? `<text x="2.6" y="0.75">${escapeHtml(point.label)}</text>` : ""}
+          </g>
+        `).join("")}
+      </svg>
+      <div class="route-map-foot">
+        <i>Gold hub: NCR covered</i>
+        <i>Violet base: S1 North / South</i>
+        <i>Dashed lines: future regions</i>
       </div>
     </div>
   `;
@@ -280,14 +329,6 @@ function updateNextStop() {
   copy.textContent = `${upcoming.date} | ${upcoming.status}. The next #HaringLungsod storyline can connect players, crews, city pride, and short-form content.`;
 }
 
-document.querySelectorAll("[data-map-tab]").forEach((button) => {
-  button.addEventListener("click", () => {
-    document.querySelectorAll("[data-map-tab]").forEach((item) => item.classList.remove("active"));
-    button.classList.add("active");
-    renderCoverage(button.dataset.mapTab);
-  });
-});
-
 document.querySelectorAll("[data-city-filter]").forEach((button) => {
   button.addEventListener("click", () => {
     document.querySelectorAll("[data-city-filter]").forEach((item) => item.classList.remove("active"));
@@ -307,7 +348,7 @@ document.querySelectorAll("[data-package]").forEach((button) => {
 const year = document.querySelector("[data-current-year]");
 if (year) year.textContent = String(new Date().getFullYear());
 
-renderCoverage();
+renderNationalRouteMap();
 renderMediaGrid("#home-media-grid");
 renderMediaGrid("#about-media-grid");
 renderCityCards();
